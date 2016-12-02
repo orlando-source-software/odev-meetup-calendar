@@ -3,8 +3,9 @@ import axios from 'axios'
 const API_STRING = 'https://api.meetup.com'
 
 const REDIRECT_URI = `${process.env.REACT_APP_MEETUP_REDIRECT_DOMAIN}/store_token`
+const MEETUP_SECRET = process.env.REACT_APP_MEETUP_SECRET
 
-const MEETUP_OAUTH_URL = `https://secure.meetup.com/oauth2/authorize?client_id=r7b89vkqb09tinu75nennoki5q&response_type=token&redirect_uri=${REDIRECT_URI}`
+const MEETUP_OAUTH_URL = `https://secure.meetup.com/oauth2/authorize?client_id=${MEETUP_SECRET}&response_type=token&redirect_uri=${REDIRECT_URI}`
 
 const getMeetupApi = (query, accessToken) => {
   return axios.get(`${API_STRING}${query}&access_token=${accessToken}`)
