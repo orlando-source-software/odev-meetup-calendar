@@ -3,7 +3,6 @@ import axios from 'axios'
 const BASE_URL = 'http://tiy-orl-proxy.herokuapp.com/amway_events'
 
 const calendarify = (event) => {
-  console.log(event.StartDateTime)
   return {
     title: event.Title,
     start: new Date(event.StartDateTime),
