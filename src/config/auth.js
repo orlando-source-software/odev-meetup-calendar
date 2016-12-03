@@ -9,10 +9,8 @@ const requireMeetupToken = () => {
     window.location = MEETUP_OAUTH_URL
   }
 }
-console.log('yes there is an auth')
 
 const requireAuth = (nextState, replace, callback) => {
-  console.log('requireAuth')
   const onRedirectBack = (error, authData) => {
     if (error) {
       console.log(error)
@@ -26,12 +24,10 @@ const requireAuth = (nextState, replace, callback) => {
   }
 
   base.onAuth(user => {
-    console.log('base.onAuth')
     validGoogleToken(user).then(() => {
       requireMeetupToken()
       callback()
     }).catch(e => {
-      console.log('base.onAuth .catch')
       base.authGetOAuthRedirectResult(onRedirectBack)
     })
   })
