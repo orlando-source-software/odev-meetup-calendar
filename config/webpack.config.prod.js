@@ -130,13 +130,21 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss', 'sass?sourceMap&config=sassLoader')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
-      {
+      /*{
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', [
           'css?importLoaders=1&-autoprefixer!postcss',
           //'resolve-url',
           'sass?sourceMap&config=sassLoader'
         ])
+        },*/
+      {
+        test: /\.scss$/,
+        loaders: [
+         'style',
+         'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+         'sass?sourceMap&config=sassLoader'
+        ]
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // JSON is not enabled by default in Webpack but both Node and Browserify
