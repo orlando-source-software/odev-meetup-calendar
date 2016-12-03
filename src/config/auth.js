@@ -40,6 +40,7 @@ const authHandler = (error) => {
 }
 
 const storeToken = (nextState, replace, callback) => {
+  console.log('returning from meetup, url is ', window.location.href)
   if (storeMeetupAccessToken()) {
     base.onAuth(user => {
       if (user) {
