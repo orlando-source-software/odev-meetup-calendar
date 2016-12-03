@@ -19,7 +19,6 @@ class App extends Component {
     this.getAmwayEvents = this.getAmwayEvents.bind(this)
     this.getUserMeetups = this.getUserMeetups.bind(this)
     this.getGoogleCalendarEvents = this.getGoogleCalendarEvents.bind(this)
-    console.log('app constructor')
   }
 
   getAmwayEvents () {
@@ -43,7 +42,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log('cDM')
     base.onAuth(user => {
       this.getAmwayEvents()
       this.getUserMeetups(user)
