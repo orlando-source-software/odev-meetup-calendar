@@ -6,7 +6,7 @@ import googleCalendarEvents from '../config/googleCalendarEvents'
 import amwayEvents from '../config/amway'
 import MyCalendar from './MyCalendar'
 import EventDetail from './EventDetail'
-
+console.log('app')
 class App extends Component {
   constructor () {
     super()
@@ -56,6 +56,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('render app')
     let events = this.state.meetups
                  .concat(this.state.calendarEvents)
                  .concat(this.state.amwayEvents)
