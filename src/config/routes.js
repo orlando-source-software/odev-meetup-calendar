@@ -5,7 +5,7 @@ import App from '../components/App'
 import Logout from '../components/Logout'
 import Profile from '../components/Profile'
 import { requireAuth, storeToken } from './auth'
-console.log('routes.js')
+
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={MyLayout}>

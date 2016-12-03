@@ -6,4 +6,5 @@ const base = Rebase.createClass({
   storageBucket: "tiy-meetup-calendar.appspot.com",
   messagingSenderId: "491666686384"
 })
+console.log('base is ', base)
 export default base

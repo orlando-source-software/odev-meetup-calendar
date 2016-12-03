@@ -6,7 +6,7 @@ import googleCalendarEvents from '../config/googleCalendarEvents'
 import amwayEvents from '../config/amway'
 import MyCalendar from './MyCalendar'
 import EventDetail from './EventDetail'
-console.log('app')
+
 class App extends Component {
   constructor () {
     super()
@@ -19,6 +19,7 @@ class App extends Component {
     this.getAmwayEvents = this.getAmwayEvents.bind(this)
     this.getUserMeetups = this.getUserMeetups.bind(this)
     this.getGoogleCalendarEvents = this.getGoogleCalendarEvents.bind(this)
+    console.log('app constructor')
   }
 
   getAmwayEvents () {
@@ -42,6 +43,7 @@ class App extends Component {
   }
 
   componentDidMount () {
+    console.log('cDM')
     base.onAuth(user => {
       this.getAmwayEvents()
       this.getUserMeetups(user)
@@ -56,7 +58,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('render app')
     let events = this.state.meetups
                  .concat(this.state.calendarEvents)
                  .concat(this.state.amwayEvents)
