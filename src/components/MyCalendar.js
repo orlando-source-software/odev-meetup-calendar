@@ -56,12 +56,14 @@ const Event = ({event}) => {
         <strong>{time(event.start)}-{time(event.end)}:{event.group}</strong>
       </span>
     )
-  } else {
+  } else if (event.summary) {
     return (
       <span title={`${time(event.start)}-${time(event.end)}`}>
         <strong>{event.summary}</strong>
       </span>
     )
+  } else {
+    return <span>Amway event</span>
   }
 }
 

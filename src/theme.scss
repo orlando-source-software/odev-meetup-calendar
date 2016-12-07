@@ -1,0 +1,31 @@
+.layout {
+  .navDrawer {
+    .drawerContent {
+      width: 16rem;
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      a {
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    &.pinned {
+      max-width: 16rem;
+      width: 16rem;
+    }
+
+    @media screen and (--larger-than-lg-tablet-viewport) {
+      &.lgTabletPermanent {
+        max-width: 16rem;
+        width: 16rem;
+      }
+      &.wide {
+        max-width: 16rem;
+        width: 16rem;
+      }
+    }
+  }
+}

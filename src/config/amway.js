@@ -1,13 +1,16 @@
 import axios from 'axios'
+import moment from 'moment'
 
 const BASE_URL = 'http://tiy-orl-proxy.herokuapp.com/amway_events'
+const DATE_FORMAT = 'YYYY-MM-DDTHH:mm:ss.S'
 
 const calendarify = (event) => {
   return {
     title: event.Title,
-    start: new Date(event.StartDateTime),
-    end: new Date (event.EndDateTime),
+    start: moment(event.StartDateTime, DATE_FORMAT).toDate(),
+    end: moment(event.EndDateTime, DATE_FORMAT).toDate(),
     background: true,
+    allDay: true,
     source: 'amway'
   }
 }

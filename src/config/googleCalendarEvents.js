@@ -28,6 +28,7 @@ const calendarify = (response) => {
     .map(event => {
     if (event.creator.displayName === 'Holidays in United States') {
       event.start.date = event.end.date
+      event.allDay = true
     }
     return {
       start: new Date(event.start.dateTime || event.start.date),
@@ -36,6 +37,7 @@ const calendarify = (response) => {
       attendance: (event.attendees && event.attendees.length) || undefined,
       address: event.location,
       creator: event.creator,
+      allDay: event.allDay,
       source: 'google'
     }
   })
