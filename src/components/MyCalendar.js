@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import BigCalendar from 'react-big-calendar'
 import BackgroundEvent from './BackgroundEvent'
 import moment from 'moment'
-import '../index.css'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 BigCalendar.momentLocalizer(moment)
@@ -23,12 +22,18 @@ class MyCalendar extends Component {
         events={this.props.events}
         onSelectEvent={this.eventSelected.bind(this)}
         eventPropGetter={this.eventPropGetter}
+        min={moment('6:00am', 'h:mma').toDate()}
         formats={{
           dayFormat: 'ddd MM/DD',
           dayHeaderFormat: 'ddd MM/DD'
         }}
         components={{
-          event: Event,
+          month: {
+            event: Event
+          },
+          week: {
+            event: WeekEvent
+          },
           backgroundEvent: BackgroundEvent
         }}
       />
@@ -67,6 +72,23 @@ const Event = ({event}) => {
   }
 }
 
+const WeekEvent = ({event}) => {
+  if (event.source === 'meetup') {
+    return (
+      <span title={`${event.group} (${event.address})`}>
+        <strong>{event.group}</strong>
+      </span>
+    )
+  } else if (event.summary) {
+    return (
+      <span>
+        <strong>{event.summary}</strong>
+      </span>
+    )
+  } else {
+    return <span>Amway event</span>
+  }
+}
 // step 2 would be to allow each user to choose which events to pay attention to and store those in FB
 // also I want to integrate w google calendar
 

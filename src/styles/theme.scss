@@ -1,8 +1,13 @@
 .layout {
   .navDrawer {
+    .scrim {
+      position: fixed;
+    }
     .drawerContent {
       width: 16rem;
       ul {
+        position: fixed;
+        top: 8rem;
         list-style-type: none;
         padding-left: 0;
       }

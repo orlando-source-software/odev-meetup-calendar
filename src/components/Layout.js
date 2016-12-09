@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { AppBar, Layout, NavDrawer, Panel, Button, IconButton } from 'react-toolbox'
-import theme from '../theme.scss'
+import theme from '../styles/theme.scss'
 
 const ThemedLayout = (props) => (
   <Layout {...props} theme={theme} />
