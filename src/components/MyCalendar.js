@@ -51,20 +51,24 @@ class MyCalendar extends Component {
     address: event.venue
     */
 const time = (dateObj) => {
-  return dateObj.toLocaleTimeString().replace(':00 ', '')
+  return dateObj.toLocaleTimeString().replace(/:00/g, '')
+                .replace(/\sPM$/,'p').replace(/\sAM$/,'a')
 }
 
 const Event = ({event}) => {
   if (event.source === 'meetup') {
     return (
       <span title={`${event.group} (${event.address})`}>
-        <strong>{time(event.start)}-{time(event.end)}:{event.group}</strong>
+        <strong>{time(event.start)} {event.group}</strong>
       </span>
     )
+
+  } else if (event.allDay) {
+    return <strong>{event.summary}</strong>
   } else if (event.summary) {
     return (
       <span title={`${time(event.start)}-${time(event.end)}`}>
-        <strong>{event.summary}</strong>
+        <strong>{time(event.start)} {event.summary}</strong>
       </span>
     )
   } else {
