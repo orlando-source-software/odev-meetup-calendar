@@ -5,9 +5,13 @@ This project combines data from Meetup's API, the Google Calendar API, and the A
 ## Development Instructions
 
 `$ hub clone bgates/tiy-orl-calendar`
+
 `$ cd tiy-orl-calendar`
+
 `$ npm install`
+
 `$ cd node_modules/react-big-calendar`
+
 `$ NODE_ENV=development npm run build`
 
 Then copy the file `.env.development` into the top-level directory of the project, and `npm run start`.
