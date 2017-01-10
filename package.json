@@ -5,6 +5,7 @@
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.5.1",
+    "babel-cli": "^6.18.0",
     "babel-core": "6.17.0",
     "babel-eslint": "7.0.0",
     "babel-jest": "16.0.0",
@@ -59,7 +60,7 @@
     "re-base": "^2.3.2",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
-    "react-big-calendar": "^0.11.0",
+    "react-big-calendar": "bgates/react-big-calendar",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
     "react-toolbox": "^1.2.3"
