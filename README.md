@@ -4,9 +4,9 @@ This project combines data from Meetup's API, the Google Calendar API, and the A
 
 ## Development Instructions
 
-`$ hub clone bgates/tiy-orl-calendar`
+`$ hub clone orlando-source-software/odev-meetup-calendar`
 
-`$ cd tiy-orl-calendar`
+`$ cd odev-meetup-calendar`
 
 `$ npm install`
 
